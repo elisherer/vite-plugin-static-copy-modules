@@ -1,0 +1,51 @@
+{
+  "name": "vite-plugin-static-copy-modules",
+  "version": "1.0.0",
+  "description": "Use vite-plugin-static-copy to copy node_modules file for serving",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.js"
+  },
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0"
+  },
+  "scripts": {
+    "build": "microbundle --external node:module --format esm,cjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elisherer/vite-plugin-static-copy-modules.git"
+  },
+
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "static",
+    "monaco",
+    "mermaid"
+  ],
+  "author": "Eli Sherer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elisherer/vite-plugin-static-copy-modules/issues"
+  },
+  "homepage": "https://github.com/elisherer/vite-plugin-static-copy-modules#readme",
+  "peerDependencies": {
+    "vite": "^2.6.0 || 3 || 4 || 5",
+    "vite-plugin-static-copy": ">=1.0.1"
+  },
+  "devDependencies": {
+    "vite-plugin-static-copy": "^1.0.1",
+    "microbundle": "^0.15.1",
+    "typescript": "^5.3.3"
+  }
+}
