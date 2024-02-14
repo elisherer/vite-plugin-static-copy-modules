@@ -1,4 +1,5 @@
 import { createRequire } from "node:module";
+import { type Plugin } from "vite";
 import { viteStaticCopy, type Target, ViteStaticCopyOptions } from "vite-plugin-static-copy";
 
 const _require = createRequire(import.meta.url);
@@ -15,7 +16,7 @@ export const defaultPublicPathResolver = (moduleName: string, modulePackage: any
     return moduleName.replace("@", "").replace(/\//g, "-") + `-${modulePackage.version}`;
 };
 
-export const viteStaticCopyModulePlugin = (modules: ViteStaticCopyModuleOptions[]) => {
+export const viteStaticCopyModulePlugin = (modules: ViteStaticCopyModuleOptions[]) : Plugin[] => {
     const copyOptions: ViteStaticCopyOptions = { targets: [] };
 
     const defines: Record<string, string> = {};
