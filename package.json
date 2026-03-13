@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-static-copy-modules",
-  "version": "1.0.3",
+  "version": "2.0.2",
   "description": "Use vite-plugin-static-copy to copy node_modules files for serving",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -15,7 +15,7 @@
     "dist/"
   ],
   "engines": {
-    "node": "^18.0.0 || >=20.0.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
     "build": "microbundle --external node:module --format esm,cjs",
@@ -40,12 +40,12 @@
   },
   "homepage": "https://github.com/elisherer/vite-plugin-static-copy-modules#readme",
   "peerDependencies": {
-    "vite": "^5 || ^6",
+    "vite": "^6 || ^7 || ^8",
     "vite-plugin-static-copy": ">=1.0.1"
   },
   "devDependencies": {
-    "vite": "^6.0.0",
-    "vite-plugin-static-copy": "^2.3.1",
+    "vite": "^7.0.0",
+    "vite-plugin-static-copy": "^3.3.0",
     "microbundle": "^0.15.1",
     "typescript": "^5.3.3"
   }

@@ -43,15 +43,15 @@ export const viteStaticCopyModulePlugin = (modules: ViteStaticCopyModuleOptions[
 
     plugs.forEach(plugin => {
         const configMutator = plugin.config;
-        plugin.config = (config, env) => {
+        plugin.config = function (config, env){
             if (!config.define) {
                 config.define = {};
             }
             for (const key in defines) {
                 config.define[key] = JSON.stringify(defines[key]);
             }
-            return typeof configMutator === "function" ? configMutator(config, env) : config;
-        };
+            return typeof configMutator === "function" ? configMutator.call(this, config, env) : config;
+        }
     });
 
     return plugs;
